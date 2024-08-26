@@ -1,0 +1,57 @@
+version: "3.8"
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: code-lara
+        container_name: code-lara
+        restart: unless-stopped
+        ports:
+            - "8000:8000"
+        volumes:
+            - .:/var/www
+        environment:
+            - APP_ENV=local
+            - APP_DEBUG=true
+            - APP_KEY=${APP_KEY}
+            - DB_CONNECTION=mysql
+            - DB_HOST=db
+            - DB_PORT=3306
+            - DB_DATABASE=db
+            - DB_USERNAME=root
+            - DB_PASSWORD=
+            - REDIS_HOST=redis
+            - REDIS_PORT=6379
+        depends_on:
+            - db
+            - redis
+        command: sh -c "php artisan serve --host=0.0.0.0 --port=8000"
+
+    db:
+        image: mysql:8.0
+        container_name: lara-db
+        restart: unless-stopped
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD:
+            MYSQL_DATABASE: code-lara
+            MYSQL_PASSWORD:
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+        volumes:
+            - ./dbdata/test:/var/lib/mysql
+    redis:
+        image: redis:latest
+        container_name: lara-redis
+        restart: unless-stopped
+        ports:
+            - "6380:6379"
+        deploy:
+            resources:
+                limits:
+                    memory: 512M
+
+volumes:
+    dbdata:
