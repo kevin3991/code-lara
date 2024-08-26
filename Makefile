@@ -11,4 +11,4 @@ d-re-up:
 d-migrate:
 	docker compose run --rm app php artisan migrate
 d-ssh-api:
-	docker exec -it swise-api-app /bin/bash
+	docker exec -it code-lara /bin/bash
