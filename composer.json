@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.2",
         "darkaonline/l5-swagger": "^8.6",
+        "essa/api-tool-kit": "^2.1",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9"
     },
