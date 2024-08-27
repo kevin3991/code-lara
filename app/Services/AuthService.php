@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Enums\TokenRole;
 use App\Repositories\UserRepository;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
@@ -32,6 +33,17 @@ class AuthService
 
         return [
             'token' => $token,
+        ];
+    }
+
+    public function getUserInfo()
+    {
+        $user = Auth::user();
+
+        return [
+            'id' => $user->id,
+            'name' => $user->name,
+            'email' => $user->email,
         ];
     }
 }

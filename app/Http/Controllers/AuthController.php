@@ -27,4 +27,15 @@ class AuthController extends Controller
             return $this->responseUnAuthenticated($th->getMessage());
         }
     }
+
+    public function getUserInfo()
+    {
+        try {
+            $response = $this->authService->getUserInfo();
+
+            return $this->responseSuccess('Get user info successfully', $response);
+        } catch (\Throwable $th) {
+            return $this->responseUnAuthenticated($th->getMessage());
+        }
+    }
 }
