@@ -28,6 +28,17 @@ class AuthController extends Controller
         }
     }
 
+    public function logout()
+    {
+        try {
+            $this->authService->logout();
+
+            return $this->responseSuccess('Logout successfully');
+        } catch (\Throwable $th) {
+            return $this->responseUnAuthenticated($th->getMessage());
+        }
+    }
+
     public function getUserInfo()
     {
         try {

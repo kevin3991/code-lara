@@ -36,6 +36,12 @@ class AuthService
         ];
     }
 
+    public function logout()
+    {
+        $user = $this->userRepository->find(Auth::id());
+        $user->tokens()->delete();
+    }
+
     public function getUserInfo()
     {
         $user = Auth::user();
