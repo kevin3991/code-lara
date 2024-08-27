@@ -12,7 +12,7 @@ class CreateTestUser extends Seeder
      */
     public function run(): void
     {
-        $users = [
+        $test_users = [
             [
                 'name' => 'Test User',
                 'email' => 'demo@code-lara.com',
@@ -20,8 +20,12 @@ class CreateTestUser extends Seeder
             ],
         ];
 
-        foreach ($users as $user) {
-            User::create($user);
+        foreach ($test_users as $test_user) {
+            $user = User::where('email', $test_user['email'])->first();
+            if (! empty($user)) {
+                continue;
+            }
+            User::create($test_user);
         }
     }
 }
