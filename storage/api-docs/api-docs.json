@@ -71,8 +71,6 @@
             "title",
             "content",
             "published_at",
-            "tags",
-            "type",
             "view_count",
             "thumbnail"
           ],
@@ -88,90 +86,36 @@
               "type": "string",
               "x-stoplight": {
                 "id": "2g3vzot60o2q1"
-              }
+              },
+              "example": "Similique et omnis consequatur non est."
             },
             "content": {
               "type": "string",
               "x-stoplight": {
                 "id": "kkqcajh9e8duv"
-              }
+              },
+              "example": "Fuga eaque at fuga mollitia qui. Sit qui enim eius eos architecto doloremque possimus. Recusandae aut tenetur doloribus facilis ducimus. Reprehenderit unde porro sed recusandae cumque blanditiis quia.\\n\\nDicta voluptas repellendus accusamus vel molestias earum non. Itaque nam eaque suscipit non. Vitae blanditiis reiciendis sapiente sint qui nisi nam. Ut magnam atque rerum culpa adipisci.\\n\\nUt unde error culpa qui. Eius porro consequatur deleniti velit et error ipsum. Eum accusantium vel recusandae ad sunt a dolore."
             },
             "published_at": {
               "type": "string",
               "x-stoplight": {
                 "id": "cj44ugzznwncf"
               },
-              "example": "2024-01-01 11:00:00"
-            },
-            "tags": {
-              "type": "array",
-              "x-stoplight": {
-                "id": "2m7reev642txl"
-              },
-              "items": {
-                "x-stoplight": {
-                  "id": "49m7ya1eiox6x"
-                },
-                "type": "object",
-                "required": [
-                  "id",
-                  "name"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "x-stoplight": {
-                      "id": "nma462iim08o0"
-                    },
-                    "example": "d58d1e63dcc42a64a5cc8a219cacc70d"
-                  },
-                  "name": {
-                    "type": "string",
-                    "x-stoplight": {
-                      "id": "0bhsi8dbe4x09"
-                    },
-                    "example": "健身小將"
-                  }
-                }
-              }
-            },
-            "type": {
-              "type": "object",
-              "x-stoplight": {
-                "id": "024va0bjohvmy"
-              },
-              "required": [
-                "id",
-                "name"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "x-stoplight": {
-                    "id": "oe1q6lb7og85f"
-                  },
-                  "example": "d58d1e63dcc42a64a5cc8a219cacc70d"
-                },
-                "name": {
-                  "type": "string",
-                  "x-stoplight": {
-                    "id": "q9kuku1j88yls"
-                  },
-                  "example": "生活"
-                }
-              }
+              "example": "2024-04-24 23:14:29"
             },
             "view_count": {
-              "type": "string",
+              "type": "number",
               "x-stoplight": {
                 "id": "4q8o7twuqi5do"
-              }
+              },
+              "example": 4791
             },
             "thumbnail": {
               "type": "string",
               "x-stoplight": {
                 "id": "nlp3jxyc21rv7"
-              }
+              },
+              "example": "https://via.placeholder.com/640x480.png/0022aa?text=news+et"
             }
           }
         },
@@ -189,7 +133,7 @@
               },
               "example": 1
             },
-            "total_page": {
+            "last_page": {
               "type": "integer",
               "x-stoplight": {
                 "id": "jyac9bqz39wqp"
@@ -244,18 +188,6 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "type_id": {
-                    "type": "string",
-                    "x-stoplight": {
-                      "id": "y6ezn9vrcute5"
-                    }
-                  },
-                  "tag_ids": {
-                    "type": "string",
-                    "x-stoplight": {
-                      "id": "nx0ovh3lo06uf"
-                    }
-                  },
                   "keyword": {
                     "type": "string",
                     "x-stoplight": {
@@ -290,7 +222,7 @@
                 "required": [
                   "message",
                   "data",
-                  "duration"
+                  "status"
                 ],
                 "properties": {
                   "message": {
@@ -306,8 +238,7 @@
                       "id": "hq8le6okp8j5h"
                     },
                     "required": [
-                      "token",
-                      "refresh_token"
+                      "token"
                     ],
                     "properties": {
                       "token": {
@@ -315,23 +246,16 @@
                         "x-stoplight": {
                           "id": "ebyrunfyq9tf9"
                         },
-                        "example": "eyJ0eXAiOiJKV1QiLCJhbGc..."
-                      },
-                      "refresh_token": {
-                        "type": "string",
-                        "x-stoplight": {
-                          "id": "onf5i7anltowc"
-                        },
-                        "example": "eyJ0eXAiOiJKV1QiLCJhbGc..."
+                        "example": "7|07rEJRCsal2AxQ4U13fx474Y4dejzNrnzesf7GLRefca33a6"
                       }
                     }
                   },
-                  "duration": {
+                  "status": {
                     "type": "number",
                     "x-stoplight": {
-                      "id": "o0qfbrigssu39"
+                      "id": "s0tx8j2zkcjdt"
                     },
-                    "example": 0.21232023923
+                    "example": 200
                   }
                 }
               },
@@ -340,10 +264,9 @@
                   "value": {
                     "message": "OK",
                     "data": {
-                      "token": "eyJ0eXAiOiJKV1QiLCJhbGc...",
-                      "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGc..."
+                      "token": "7|07rEJRCsal2AxQ4U13fx474Y4dejzNrnzesf7GLRefca33a6"
                     },
-                    "duration": 0.21232023923
+                    "status": 200
                   }
                 }
               }
@@ -356,7 +279,19 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "status",
+                  "message",
+                  "data"
+                ],
                 "properties": {
+                  "status": {
+                    "type": "number",
+                    "x-stoplight": {
+                      "id": "6soy7eutoj4os"
+                    },
+                    "example": 200
+                  },
                   "message": {
                     "type": "string",
                     "x-stoplight": {
@@ -364,33 +299,62 @@
                     }
                   },
                   "data": {
-                    "type": "array",
+                    "type": "object",
                     "x-stoplight": {
-                      "id": "8tbph4rgsnops"
+                      "id": "tbiqltga0yg02"
                     },
-                    "items": {
-                      "$ref": "#/components/schemas/NewsData",
-                      "x-stoplight": {
-                        "id": "wvvyua9d2qdlw"
+                    "required": [
+                      "data",
+                      "meta"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "x-stoplight": {
+                          "id": "xbe40n0t4qy0f"
+                        },
+                        "items": {
+                          "$ref": "#/components/schemas/NewsData",
+                          "x-stoplight": {
+                            "id": "5g6d41ua48dy4"
+                          }
+                        }
+                      },
+                      "meta": {
+                        "$ref": "#/components/schemas/PaginationMeta",
+                        "x-stoplight": {
+                          "id": "uxx89plnaq97s"
+                        }
                       }
                     }
-                  },
-                  "meta": {
-                    "$ref": "#/components/schemas/PaginationMeta",
-                    "x-stoplight": {
-                      "id": "k91ky0godlu68"
-                    }
-                  },
-                  "duration": {
-                    "type": "number",
-                    "x-stoplight": {
-                      "id": "jy6i0w5f861ie"
-                    },
-                    "example": 0.21232023923
                   }
                 }
               },
-              "examples": {}
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "status": 200,
+                    "message": "string",
+                    "data": {
+                      "data": [
+                        {
+                          "id": "d58d1e63dcc42a64a5cc8a219cacc70d",
+                          "title": "Similique et omnis consequatur non est.",
+                          "content": "Fuga eaque at fuga mollitia qui. Sit qui enim eius eos architecto doloremque possimus. Recusandae aut tenetur doloribus facilis ducimus. Reprehenderit unde porro sed recusandae cumque blanditiis quia.\\n\\nDicta voluptas repellendus accusamus vel molestias earum non. Itaque nam eaque suscipit non. Vitae blanditiis reiciendis sapiente sint qui nisi nam. Ut magnam atque rerum culpa adipisci.\\n\\nUt unde error culpa qui. Eius porro consequatur deleniti velit et error ipsum. Eum accusantium vel recusandae ad sunt a dolore.",
+                          "published_at": "2024-04-24 23:14:29",
+                          "view_count": 4791,
+                          "thumbnail": "https://via.placeholder.com/640x480.png/0022aa?text=news+et"
+                        }
+                      ],
+                      "meta": {
+                        "current_page": 1,
+                        "last_page": 4,
+                        "per_page": 10
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
