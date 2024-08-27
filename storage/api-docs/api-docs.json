@@ -192,19 +192,22 @@
                     "type": "string",
                     "x-stoplight": {
                       "id": "4d1z7cihrt7ul"
-                    }
+                    },
+                    "example": "Similique"
                   },
                   "page": {
-                    "type": "string",
+                    "type": "number",
                     "x-stoplight": {
                       "id": "wio4wbipppea1"
-                    }
+                    },
+                    "example": 1
                   },
                   "per_page": {
-                    "type": "string",
+                    "type": "number",
                     "x-stoplight": {
                       "id": "at6myiyh9yzjb"
-                    }
+                    },
+                    "example": 10
                   }
                 }
               }
