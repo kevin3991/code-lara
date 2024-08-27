@@ -28,9 +28,7 @@ class AuthService
             throw new HttpException(401, 'PASSWORD_NOT_MATCH');
         }
 
-        dd($user->createToken($user->email, [TokenRole::NORMAL]));
         $token = $user->createToken($user->email, [TokenRole::NORMAL])->plainTextToken;
-        dd($token);
 
         return [
             'token' => $token,

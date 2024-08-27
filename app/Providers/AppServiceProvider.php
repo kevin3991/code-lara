@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Sanctum\PersonalAccessToken;
 use Essa\APIToolKit\Exceptions\Handler;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Sanctum\Sanctum;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,5 +22,8 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void {}
+    public function boot(): void
+    {
+        Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
+    }
 }
